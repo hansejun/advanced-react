@@ -1,17 +1,16 @@
 import React from 'react';
 import ResourceLoader from './resource-loader';
 import DataResource from './data-resource';
+import DataResourceWithRender from './data-resource-with-render';
+import UserView from './user-view';
 
 const AppContainer = () => {
   return (
     <>
-      <DataResource getData={() => getUser('1')} name="user">
-        <UserView />
-      </DataResource>
-
-      <DataResource getData={() => getBook('2')} name="book">
-        <SmallBookList />
-      </DataResource>
+      <DataResourceWithRender
+        getData={() => getUser('1')}
+        render={data => <UserView user={data} />}
+      />
     </>
   );
 };
