@@ -1,20 +1,17 @@
 import React from 'react';
 import ResourceLoader from './resource-loader';
+import DataResource from './data-resource';
 
 const AppContainer = () => {
   return (
     <>
-      <ResourceLoader url="/users/1" name="user">
+      <DataResource getData={() => getUser('1')} name="user">
         <UserView />
-      </ResourceLoader>
+      </DataResource>
 
-      <ResourceLoader url="/books/1" name="book">
-        <UserView />
-      </ResourceLoader>
-
-      <ResourceLoader url="/foods/1" name="food">
-        <UserView />
-      </ResourceLoader>
+      <DataResource getData={() => getBook('2')} name="book">
+        <SmallBookList />
+      </DataResource>
     </>
   );
 };
