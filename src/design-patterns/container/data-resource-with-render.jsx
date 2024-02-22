@@ -12,4 +12,5 @@ const DataResourceWithRender = ({ getData = () => {}, render }) => {
 
   return render(data);
 };
+
 export default DataResourceWithRender;
